@@ -1,0 +1,32 @@
+{% extends "patient/patient_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>View Complaints</title>
+</head>
+<body>
+<table class="table table-responsive table-striped table-bordered" style="
+                                         position: relative;right: 17px;" >
+  <tr>
+    <th scope="col"><div align="center">S.no</div></th>
+    <th scope="col"><div align="center">User</div></th>
+    <th scope="col"><div align="center">Complaint</div></th>
+    <th scope="col"><div align="center">Reply</div></th>
+  </tr>
+    {%for i in data %}
+  <tr>
+    <td>{{loop.index}}</td>
+    <td><img src="{{ i['photo'] }}" height="150px" width="150px">{{ i['name'] }}</td>
+      <td><b>Date: {{ i['complaint_date'] }}</b><br>
+          <b>Complaint: </b>{{ i['complaint'] }}
+      </td>
+      <td>{% if i['reply']=="pending" %}<b><font color="red">pending</font></b>{% else  %}<b>Date: {{ i['reply_date'] }}</b><br>
+          <b>Reply: </b>{{ i['reply'] }}{% endif %}</td>
+  </tr>
+{% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

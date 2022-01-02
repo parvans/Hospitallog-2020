@@ -1,0 +1,30 @@
+{% extends "patient/patient_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+  <table class="table table-striped table-bordered" style="position: relative;left: -14px;" >
+    <tr>
+       <td scope="col"><div align="center"><strong>S.no</strong></div></td>
+       <td scope="col"><div align="center"><strong>Doctor</strong></div></td>
+       <td scope="col"><div align="center"><strong>Date</strong></div></td>
+       <td scope="col"><div align="center"><strong>Status</strong></div></td>
+    </tr>
+      {% for i in data %}
+      <tr>
+          <td>{{loop.index}}</td>
+          <td><img src="{{ i['d_profile_photo'] }}" height="150px" width="150px" style="border-radius: 50%" alt="Avatar"><br> Dr. {{ i['d_name'] }}</td>
+          <td>{{i['date']}}</td>
+          <td>{% if i['status']=="approve" %}<a href="/patient_view_phr/{{ i['patient_entry_id'] }}" class="badge badge-primary" >View Phr</a>{% elif i['status']=="pending" %}<b><font color="green">Pending</font></b>{% else %}<b><font color="red">Rejected</font></b>{% endif %}</td>
+      </tr>
+      {% endfor %}
+  </table>
+</body>
+</html>
+{% endblock %}
+

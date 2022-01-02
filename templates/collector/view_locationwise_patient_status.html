@@ -1,0 +1,47 @@
+{% extends "collector/collector_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/search_patient_status">
+  <table >
+    <tr>
+      <td><label for="textfield2"></label>
+        <div align="left">
+          <input type="text" name="textfield2" id="textfield2" placeholder="District" class="form-control" required />
+      </div></td>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Search" class="btn btn-primary mt-3" style="position: relative;top: 3px;left: 10px;" /></th>
+    </tr>
+
+  </table>
+</form>
+<br>
+<table class="table table-responsive table-striped table-bordered" style="
+    position: relative;right: 23px;">
+  <tr>
+    <td scope="col"><div align="center"><strong>S.no</strong></div></td>
+    <td scope="col"><div align="center"><strong>Patient</strong></div></td>
+    <td nowrap scope="col"><div align="center"><strong>Quarantine Start Date</strong></div></td>
+    <td nowrap scope="col"><div align="center"><strong>Quarantine End Date</strong></div></td>
+    <td scope="col"><div align="center"><strong>Health Status</strong></div></td>
+  </tr>
+    {%for i in data %}
+  <tr>
+    <td>{{loop.index}}</td>
+      <td><img src="{{ i['photo']}}" height="150px" width="150px" style="border-radius: 50%;" alt="Avatar">
+          <br><b>Name: </b>{{ i['name']}}<br><b>Phone No: </b>{{ i['phone_no']}}<br><b>Date Of Birth: </b>{{ i['date_of_birth']}}<br><b>Gender: </b>{{ i['gender']}}<br><b>Email: </b>{{ i['email_id'] }}<br><b>Address: </b>{{i['place']}},{{i['post']}},{{i['pincode']}},{{ i['district'] }},{{ i['panchayat'] }}</td>
+    <td>{{ i['quarantine_start_date'] }}</td>
+    <td>{{ i['quarantine_end_date'] }}</td>
+    <td nowrap>{{ i['health_status'] }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
+

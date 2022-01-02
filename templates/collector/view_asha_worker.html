@@ -1,0 +1,43 @@
+{% extends "collector/collector_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<table class="table table-responsive table-striped table-bordered" style="
+                                         position: relative;right: 17px;" >
+  <tr>
+    <td scope="col"><div align="center"><strong>S.no</strong></div></td>
+    <td scope="col"><div align="center"><strong>Name</strong></div></td>
+    <td scope="col"><div align="center"><strong>Gender</strong></div></td>
+    <td scope="col" nowrap><div align="center"><strong>Date Of Birth</strong></div></td>
+    <td scope="col"><div align="center"><strong>Address</strong></div></td>
+    <td scope="col"><div align="center"><strong>Qualification</strong></div></td>
+    <td scope="col"><div align="center"><strong>Phone No.</strong></div></td>
+    <td scope="col"><div align="center"><strong>Email Id</strong></div></td>
+    <td scope="col">&nbsp;</td>
+  </tr>
+    {%for i in data %}
+  <tr>
+    <td>{{loop.index}}</td>
+    <td ><img src="{{ i['photo'] }}" height="150px" width="150px" style="border-radius: 50%" alt="Avatar">{{ i['name'] }}</td>
+    <td>{{ i['gender'] }}</td>
+    <td nowrap>{{ i['date_of_birth'] }}</td>
+    <td nowrap>{{ i['place'] }} ,{{ i['post'] }} ,{{ i['pincode'] }} ,{{ i['district'] }}</td>
+    <td>{{ i['qualification'] }}</td>
+    <td>{{ i['phone_no'] }}</td>
+    <td>{{ i['email_id'] }}</td>
+    <td><p><a href="/edit_ashaworker/{{i['ashaworker_id']}}"  class="badge badge-success" style="
+     position: relative;left: -1px;width: 61px;" >Edit</a></p>
+    <p><a href="/delete_ashawoker/{{i['ashaworker_id']}}" onclick="return confirm('Do you want to delete')"  class="badge badge-danger" >Delete</a></p></td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
+

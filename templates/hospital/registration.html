@@ -1,0 +1,95 @@
+{% extends "hospital/hospital_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registration</title>
+</head>
+
+<body>
+<form action="/add_hospital_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table >
+    <tr>
+      <td><div align="center"><strong>Name</strong></div></td>
+      <td><label for="textfield"></label>
+        <div align="left">
+          <input type="text" name="textfield" id="textfield" class="form-control" required />
+      </div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>Place</strong></div></td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>Post</strong></div></td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>Pincode</strong></div></td>
+      <td><label for="textfield4"></label>
+      <input type="number" name="textfield4" id="textfield4" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>District</strong></div></td>
+      <td><label for="select"></label>
+        <select name="select" id="select" class="form-control" required >
+          <option value="Kasargod"  >Kasargod</option>
+          <option value="Kannur" >Kannur</option>
+          <option value="Wayanad" >Wayanad</option>
+          <option value="Kozhikode" >Kozhikode</option>
+          <option value="Malappuram" >Malappuram</option>
+          <option value="Palakkad" >Palakkad</option>
+          <option value="Thrissur" >Thrissur</option>
+          <option value="Ernakulam" >Ernakulam</option>
+          <option value="Idukki" >Idukki</option>
+          <option value="Kottayam" >Kottayam</option>
+          <option value="Alappuzha" >Alappuzha</option>
+          <option value="Pathanamthitta" >Pathanamthitta</option>
+          <option value="Kollam" >Kollam</option>
+          <option value="Thiruvananthapuram" >Thiruvananthapuram</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>Phone No.</strong></div></td>
+      <td><label for="textfield5"></label>
+      <input type="tel" name="textfield5" id="textfield5" pattern="[6-9][0-9]{9}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>Email Id</strong></div></td>
+      <td><label for="textfield6"></label>
+      <input type="email" name="textfield6" id="textfield6" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>Photo</strong></div></td>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control"  /></td>
+    </tr>
+      <tr>
+      <td><div align="center"><strong>Licence No.</strong></div></td>
+      <td><label for="textfield7"></label>
+      <input type="number" name="textfield7" id="textfield7" class="form-control" required /></td>
+    </tr>
+      <tr>
+      <td><div align="center"><strong>New Password</strong></div></td>
+      <td><label for="textfield8"></label>
+      <input type="password" name="textfield8" id="textfield8" class="form-control" required /></td>
+    </tr>
+      <tr>
+      <td><div align="center"><strong>Confirm Password</strong></div></td>
+      <td><label for="textfield9"></label>
+      <input type="password" name="textfield9" id="textfield9" class="form-control" required /></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Submit" class="btn btn-primary mt-3" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

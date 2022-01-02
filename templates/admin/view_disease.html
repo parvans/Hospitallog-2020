@@ -1,0 +1,32 @@
+{% extends "admin/admin_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<table class="table table-responsive table-striped table-bordered" style="
+                                         position: relative;right: 35px;">
+  <tr>
+    <td><div align="center"><strong>S.no</strong></div></td>
+    <td><div align="center"><strong>Disease</strong></div></td>
+    <td><div align="center"><strong>Symptom</strong></div></td>
+    <td><div align="center"><strong>Date</strong></div></td>
+    <td><div align="center"><strong>Hospital</strong></div></td>
+  </tr>
+     {%for i in data %}
+  <tr>
+    <td>{{loop.index}}</td>
+    <td>{{ i['disease'] }}</td>
+    <td>{{ i['symptoms'] }}</td>
+    <td nowrap>{{ i['date'] }}</td>
+    <td><img src="{{ i['h_photo'] }}" height="150px" width="150px" alt="Avatar" style="border-radius: 50%"><br>{{ i['h_name'] }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

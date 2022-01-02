@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Log - Patient Sign Up</title>
+         <link rel="icon" type="image/png" sizes="16x16" href="../static/Header/images/favicon.png">
+  <link rel="stylesheet" href="../static/regstyle.css">
+
+    <script>
+function valid()
+
+{
+{#    alert("kkkk")#}
+    var flag=true;
+
+      if((document.getElementById("select").value)=="-1")
+    {
+                    flag=false;
+
+            document.getElementById("b1").style.visibility="visible";
+    }
+     else
+    {
+        document.getElementById("b1").style.visibility="hidden";
+    }
+
+return flag;
+}
+</script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2>Sign Up</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form action="/patient_registration_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input type="text" name="textfield" id="textfield" placeholder="Name" class="form-control" required />
+          </div>
+
+            <div class="input_field radio_option">Gender :
+              <input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0">
+              <label for="RadioGroup1_0">Male</label>
+              <input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_0">
+              <label for="RadioGroup1_0">Female</label>
+              </div>
+
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input type="date" name="textfield2" id="textfield2" class="form-control" required /> {# Date Of Birth #}
+          </div>
+
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input type="text" name="textfield3" id="textfield3" placeholder="Place" class="form-control" required />
+          </div>
+
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input type="text" name="textfield4" id="textfield4" placeholder="Post" class="form-control" required />
+          </div>
+          <div class="row clearfix">
+            <div class="col_half">
+              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input type="number" name="textfield5" id="textfield5" placeholder="Pincode" class="form-control" required />
+              </div>
+            </div>
+            <div class="col_half">
+              <div class="input_field select_option">
+                <select name="select" id="select" class="form-control" required >
+                  <option value="-1">Select a District</option>
+                  <option value="Kasargod"  >Kasargod</option>
+                  <option value="Kannur" >Kannur</option>
+                  <option value="Wayanad" >Wayanad</option>
+                  <option value="Kozhikode" >Kozhikode</option>
+                  <option value="Malappuram" >Malappuram</option>
+                  <option value="Palakkad" >Palakkad</option>
+                  <option value="Thrissur" >Thrissur</option>
+                  <option value="Ernakulam" >Ernakulam</option>
+                  <option value="Idukki" >Idukki</option>
+                  <option value="Kottayam" >Kottayam</option>
+                  <option value="Alappuzha" >Alappuzha</option>
+                  <option value="Pathanamthitta" >Pathanamthitta</option>
+                  <option value="Kollam" >Kollam</option>
+                  <option value="Thiruvananthapuram" >Thiruvananthapuram</option>
+                </select><div id="b1" style="visibility: hidden">
+                <font color="red"><i>  Choose valid option  </i></font></div>
+                <div class="select_arrow"></div>
+              </div>
+              </div>
+            </div>
+
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                   <input type="tel" name="textfield6" id="textfield6"  placeholder="Phone No." pattern="[6-9][0-9]{9}" class="form-control" required />
+            </div>
+
+             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope "></i></span>
+                  <input type="email" name="textfield7" id="textfield7" placeholder="Email Id" class="form-control" required />
+             </div>
+              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope "></i></span>
+                  <input type="text" name="textfield8" id="textfield8" placeholder="Panchayat" class="form-control" required />
+              </div>
+
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope "></i></span>
+                  <input type="file" name="fileField" id="fileField" class="form-control"  /> {# Photo #}
+            </div>
+
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock "></i></span>
+                  <input type="password" name="textfield9" id="textfield9" placeholder="New Password" class="form-control" required />
+            </div>
+
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock "></i></span>
+                  <input type="password" name="textfield10" id="textfield10" placeholder="Confirm Password" class="form-control" required />
+            </div>
+
+
+          <input class="button" type="submit" value="Register" onclick="return valid()" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<p class="credit">Developed by <a href="http://www.designtheway.com" target="_blank">Design the way</a></p>
+<!-- partial -->
+  <script src='https://use.fontawesome.com/4ecc3dbb0b.js'></script>
+</body>
+</html>

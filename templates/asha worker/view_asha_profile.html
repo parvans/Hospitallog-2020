@@ -1,0 +1,73 @@
+{% extends "asha worker/asha_worker_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Profile</title>
+</head>
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table >
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Name</strong></div></td>
+      <td><label for="textfield"></label>
+        <div align="left">
+          <input type="text" name="textfield" id="textfield" readonly="readonly" value="{{data['name']}}" class="form-control" />
+          </div></td>
+                <td rowspan=3><img src="{{ data['photo'] }}" height="134px" width="196px" style="
+                 position: relative;left: 42px;top: 14px;"  ></td>
+
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Gender</strong></div></td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" readonly="readonly" value="{{data['gender']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;right: 12px" >Date Of Birth</strong></div></td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" readonly="readonly" value="{{data['date_of_birth']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Place</strong></div></td>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" readonly="readonly" value="{{data['place']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Post</strong></div></td>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" readonly="readonly" value="{{data['post']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Pincode</strong></div></td>
+      <td><label for="textfield6"></label>
+      <input type="number" name="textfield6" id="textfield6" readonly="readonly" value="{{data['pincode']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >District</strong></div></td>
+      <td><label for="textfield9"></label>
+      <input type="text" name="textfield9" id="textfield9" readonly="readonly" value="{{data['district']}}" class="form-control" /></td>
+    </tr>
+      <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;right: 12px" >Qualification</strong></div></td>
+      <td><label for="textfield10"></label>
+      <input type="text" name="textfield10" id="textfield10" readonly="readonly" value="{{data['qualification']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Phone No.</strong></div></td>
+      <td><label for="textfield11"></label>
+      <input type="tel" name="textfield11" id="textfield11" pattern="[6-9][0-9]{9}" readonly="readonly" value="{{data['phone_no']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Email Id</strong></div></td>
+      <td><label for="textfield12"></label>
+      <input type="email" name="textfield12" id="textfield12" readonly="readonly" value="{{data['email_id']}}" class="form-control" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends "hospital/hospital_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>View PHR</title>
+</head>
+
+<body>
+<table  class="table table-responsive" >
+  <tr>
+    <th scope="col"><div align="center">S.no</div></th>
+    <th scope="col"><div align="center">Patient Entry Id</div></th>
+    <th scope="col"><div align="center">Health Status</div></th>
+    <th scope="col"><div align="center">Report</div></th>
+    <th scope="col"><div align="center">Date</div></th>
+    <th></th>
+  </tr>
+    {% for i in data %}
+  <tr>
+      <td>{{loop.index}}</td>
+      <td>{{i['patient_entry_id']}}</td>
+      <td>{{i['health_status']}}</td>
+      <td><a href="{{i['report']}}" class="badge badge-success light" >Report</a></td>
+      <td>{{i['date']}}</td>
+      <td><p><a href="/edit_phr/{{i['phr_id']}}" class="badge badge-success" style="
+    position: relative;left: -1px;width: 61px" >Edit</a></p>
+      <p><a href="/delete_phr/{{i['phr_id']}}" onclick="return confirm('Do you want to delete')" class="badge badge-danger" >Delete</a></p></td>
+
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

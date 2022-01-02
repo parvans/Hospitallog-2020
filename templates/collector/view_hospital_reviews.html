@@ -1,0 +1,31 @@
+{% extends "collector/collector_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<body>
+<table class="table table-responsive table-striped table-bordered" >
+  <tr>
+    <th scope="col"><div align="center">S.no</div></th>
+    <th scope="col"><div align="center">Hospital</div></th>
+    <th scope="col"><div align="center">Review</div></th>
+    <th scope="col"><div align="center">Date</div></th>
+    <th scope="col"><div align="center">Patient</div></th>
+  </tr>
+        {%for i in data %}
+
+  <tr>
+    <td>{{loop.index}}</td>
+    <td><img src="{{ i['h_photo'] }}" height="150px" width="150px" style="border-radius: 50%" alt="Avatar"><br>{{ i['h_name'] }}<br></td>
+    <td>{{ i['review'] }}</td>
+    <td nowrap>{{ i['date'] }}</td>
+    <td><img src="{{ i['photo'] }}" height="150px" width="150px"><br>{{ i['name'] }}<br></td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

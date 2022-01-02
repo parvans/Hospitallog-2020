@@ -1,0 +1,101 @@
+{% extends "collector/collector_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/add_ashaworkerpost" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table style="position: relative;right: 64px;" >
+    <tr>
+      <th width="136" scope="row"><div align="center" style="position: relative;top: 10px;" >Name</div></th>
+      <td width="216"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" placeholder="Name" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Gender</div></th>
+      <td style="position: relative; left:28px;top: 25px;" ><p>
+        <label>
+          <input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0" />
+          Male</label>
+        <br />
+        <label>
+          <input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1" />
+          Female</label>
+        <br />
+      </p></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Date Of Birth</div></th>
+      <td><label for="textfield2"></label>
+      <input type="date" name="textfield2" id="textfield2"  class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Place</div></th>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" placeholder="Place" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Post</div></th>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" placeholder="Post" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Pincode</div></th>
+      <td><label for="textfield5"></label>
+      <input type="number" name="textfield5" id="textfield5" placeholder="Pincode" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >District</div></th>
+      <td><label for="select"></label>
+        <select name="select" id="select" class="form-control" required >
+            <option></option>
+        <option value="Kasargod"  >Kasargod</option>
+          <option value="Kannur" >Kannur</option>
+          <option value="Wayanad" >Wayanad</option>
+          <option value="Kozhikode" >Kozhikode</option>
+          <option value="Malappuram" >Malappuram</option>
+          <option value="Palakkad" >Palakkad</option>
+          <option value="Thrissur" >Thrissur</option>
+          <option value="Ernakulam" >Ernakulam</option>
+          <option value="Idukki" >Idukki</option>
+          <option value="Kottayam" >Kottayam</option>
+          <option value="Alappuzha" >Alappuzha</option>
+          <option value="Pathanamthitta" >Pathanamthitta</option>
+          <option value="Kollam" >Kollam</option>
+          <option value="Thiruvananthapuram" >Thiruvananthapuram</option>
+      </select></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Qualification</div></th>
+      <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" placeholder="Qualification" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Phone No.</div></th>
+      <td><label for="textfield7"></label>
+      <input type="tel" name="textfield7" id="textfield7" placeholder="Phone No." pattern="[6-9][0-9]{9}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Email Id</div></th>
+      <td><label for="textfield8"></label>
+      <input type="email" name="textfield8" id="textfield8" placeholder="Email Id" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="center" style="position: relative;top: 10px;" >Photo</div></th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td align="center"  colspan="2" scope="row">
+        <input type="submit" name="button" id="button" value="Submit" class="btn btn-primary mt-3" style="
+        position: relative;left: 58px;"  /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

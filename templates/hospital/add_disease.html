@@ -1,0 +1,37 @@
+{% extends "hospital/hospital_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Add Disease</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/add_disease_post">
+  <table style="
+    position: relative;right: 76px;top: 73px;width: 479px;" >
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Disease</strong></div></td>
+      <td><label for="textfield"></label>
+        <div align="left">
+          <input type="text" name="textfield" id="textfield" placeholder="Disease" class="form-control" required  />
+      </div></td>
+    </tr>
+    <tr>
+     <td><div align="center"><strong style="position: relative;top: 10px;right: 12px" >Symptoms</strong></div></td>
+      <td><label for="textarea"></label>
+        <div align="left">
+          <textarea name="textarea" id="textarea" placeholder="Symptoms" style="
+                     height: 105px;" class="form-control" required /></textarea>
+      </div></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" class="btn btn-primary mt-3" style="
+    position: relative;left: 78px;" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

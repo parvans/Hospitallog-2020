@@ -1,0 +1,43 @@
+{% extends "admin/admin_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>View Collector</title>
+</head>
+
+<body>
+<table  class="table table-responsive table-striped table-bordered" style="
+                                         position: relative;right: 35px;" >
+  <tr>
+    <td  ><div align="center"><strong>S.no</strong></div></td>
+    <td><div align="center"><strong>Collector</strong></div></td>
+    <td ><div align="center"><strong>Gender</strong></div></td>
+    <td nowrap ><div align="center"><strong>DOB</strong></div></td>
+    <td ><div align="center"><strong>Address</strong></div></td>
+    <td ><div align="center"><strong>Phone No.</strong></div></td>
+    <td ><div align="center"><strong>Email Id</strong></div></td>
+    <td ><div align="center"><strong>Qualification</strong></div></td>
+    <td ><div align="center"></div></td>
+  </tr>
+  {%for i in data %}
+  <tr>
+    <td >{{loop.index}}</td>
+    <td style="position: relative;right: 3px;"><img src="{{ i['photo'] }}" height="150px" width="150px" alt="Avatar" style="border-radius: 50%" ><br/><a >{{ i['name' ] }}</a></td>
+    <td style="position: relative;left: 9px;">{{ i['gender'] }}</td>
+    <td nowrap>{{ i['date_of_birth'] }}</td>
+    <td >{{ i['place'] }},{{ i['post'] }},{{ i['pincode'] }},{{ i['district'] }},{{ i['working_district'] }}</td>
+    <td >{{ i['phone_no'] }}</td>
+    <td >{{ i['email_id'] }}</td>
+    <td >{{ i['qualification'] }}</td>
+    <td ><p><a href="/edit_collector/{{ i['collector_id'] }}"  class="badge badge-success" style="
+    position: relative;left: -1px;width: 61px;">Edit</a></p>
+    <p><a href="/delete_collector/{{ i['collector_id'] }}" onclick="return confirm('Do you want to delete')" class="badge badge-danger">Delete</a></p></td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
+

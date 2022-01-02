@@ -1,0 +1,38 @@
+{% extends "hospital/hospital_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Edit PHR</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/edit_phr_post/{{data['phr_id']}}" enctype="multipart/form-data">
+  <table style="
+    position: relative;right: 76px;top: 73px;width: 479px;" >
+      <tr>
+      <th scope="row" style="position: relative;top: 10px;right: 12px" >Patient Entry</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{data['patient_entry_id']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row" style="position: relative;top: 10px;right: 12px" >Health Status</th>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" value="{{data['health_status']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row" style="position: relative;top: 10px;right: 12px" ><div align="center">Report</div></th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control" required /></td>
+    </tr>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Update" class="btn btn-primary mt-3" style="
+    position: relative;left: 241px;"  /></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

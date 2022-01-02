@@ -1,0 +1,30 @@
+{% extends "admin/admin_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/send_reply_post/{{ r }}">
+  <table style="position: relative; right:90px; top: 83px;">
+    <tr>
+      <td><div align="center"><strong style="
+      position: relative;top: 10px; right: 12px;">Reply</strong></div></td>
+      <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" style="width: 499px" class="form-control" required ></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Send" class="btn btn-primary mt-3" style="
+                                                                     position: relative; left: 17px;" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
+

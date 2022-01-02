@@ -1,0 +1,33 @@
+{% extends "hospital/hospital_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Upload PHR</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/upload_phr_post/{{id}}" enctype="multipart/form-data">
+  <table style="
+    position: relative;right: 76px;top: 73px;width: 479px;">
+    <tr>
+      <th scope="row" style="position: relative;top: 10px;right: 12px" >Health Status</th>
+      <td><label for="textfield"></label>
+        <textarea name="textfield" id="textfield" placeholder="Health Status" class="form-control" required ></textarea></td>
+    </tr>
+    <tr>
+      <th scope="row" style="position: relative;top: 10px;" ><div align="center">Report</div></th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" class="btn btn-primary mt-3" style="
+    position: relative;left: 58px;" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
+

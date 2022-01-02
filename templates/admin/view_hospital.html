@@ -1,0 +1,32 @@
+{% extends "admin/admin_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hospitals</title>
+</head>
+
+<body>
+<table class="table table-responsive table-striped table-bordered" style="
+                                         position: relative;right: 35px;">
+  <tr>
+    <th scope="col"><div align="center">S.no</div></th>
+    <th scope="col"><div align="center">Name</div></th>
+    <th scope="col"><div align="center">Address</div></th>
+    <th scope="col"><div align="center">Phone no.</div></th>
+    <th scope="col"><div align="center">Email Id</div></th>
+  </tr>
+    {%for i in data %}
+  <tr>
+    <td>{{loop.index}}</td>
+    <td><img src="{{ i['h_photo'] }}" height="150px" width="150px" alt="Avatar" style="border-radius: 50%" ><br>{{ i['h_name'] }}</td>
+    <td>{{ i['h_place'] }},{{ i['h_post'] }},{{ i['h_pincode'] }},{{ i['h_district'] }}</td>
+    <td>{{ i['h_phone_no'] }}</td>
+    <td>{{ i['h_email_id'] }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends "hospital/hospital_header.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Edit Doctor</title>
+</head>
+
+<body>
+<form action="/edit_doctor_post/{{data['doctor_id']}}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table style=" position: relative;right: 23px;">
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Name</strong></div></td>
+      <td><label for="textfield"></label>
+        <div align="left">
+          <input type="text" name="textfield" id="textfield" value="{{data['d_name']}}" class="form-control" required />
+      </div></td>
+        <td rowspan="3" ><img src="{{data['d_profile_photo']}}" height="150px"width="150px" style="
+         position: relative;left: 42px;top: 14px;"></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Gender</strong></div></td>
+      <td style="position: relative; left:28px;top: 25px;" ><p>
+        <label>
+          <input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0" {% if data['d_gender']=="Male" %}checked{% endif %} />
+          Male</label>
+        <br />
+        <label>
+          <input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1" {% if data['d_gender']=="Female" %}checked{% endif %} />
+          Female</label>
+        <br />
+      </p></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Date Of Birth</strong></div></td>
+      <td><label for="textfield2"></label>
+      <input type="date" name="textfield2" id="textfield2" value="{{data['d_date_of_birth']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;right: 12px" >Specialisation</strong></div></td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{data['d_specialisation']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Experience</strong></div></td>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{data['d_experience']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Qualification</strong></div></td>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{data['d_qualification']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Place</strong></div></td>
+      <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" value="{{data['d_place']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Post</strong></div></td>
+      <td><label for="textfield7"></label>
+      <input type="text" name="textfield7" id="textfield7" value="{{data['d_post']}}" class="form-control" required /></td>
+    </tr>
+     <td><div align="center"><strong style="position: relative;top: 10px;" >Pincode</strong></div></td>
+      <td><label for="textfield8"></label>
+      <input type="number" name="textfield8" id="textfield8" value="{{data['d_pincode']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >District</strong></div></td>
+      <td><label for="select"></label>
+        <select name="select" id="select" class="form-control" required >
+          <option value="Kasargod" {% if data['district']=="Kasargod" %}selected{% endif %} >Kasargod</option>
+          <option value="Kannur" {% if data['district']=="Kannur" %}selected{% endif %} >Kannur</option>
+          <option value="Wayanad" {% if data['district']=="Wayanad" %}selected{% endif %} >Wayanad</option>
+          <option value="Kozhikode" {% if data['district']=="Kozhikode" %}selected{% endif %} >Kozhikode</option>
+          <option value="Malappuram" {% if data['district']=="Malappuram" %}selected{% endif %} >Malappuram</option>
+          <option value="Palakkad" {% if data['district']=="Palakkad" %}selected{% endif %} >Palakkad</option>
+          <option value="Thrissur" {% if data['district']=="Thrissur" %}selected{% endif %} >Thrissur</option>
+          <option value="Ernakulam" {% if data['district']=="Ernakulam" %}selected{% endif %} >Ernakulam</option>
+          <option value="Idukki" {% if data['district']=="Idukki" %}selected{% endif %} >Idukki</option>
+          <option value="Kottayam" {% if data['district']=="Kottayam" %}selected{% endif %} >Kottayam</option>
+          <option value="Alappuzha" {% if data['district']=="Alappuzha" %}selected{% endif %} >Alappuzha</option>
+          <option value="Pathanamthitta" {% if data['district']=="Pathanamthitta" %}selected{% endif %} >Pathanamthitta</option>
+          <option value="Kollam" {% if data['district']=="Kollam" %}selected{% endif %} >Kollam</option>
+          <option value="Thiruvananthapuram" {% if data['district']=="Thiruvananthapuram" %}selected{% endif %} >Thiruvananthapuram</option>
+      </select></td>
+    </tr>
+  <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Email Id</strong></div></td>
+      <td><label for="textfield9"></label>
+      <input type="email" name="textfield9" id="textfield9" value="{{data['d_email_id']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Phone No.</strong></div></td>
+      <td><label for="textfield10"></label>
+      <input type="tel" name="textfield10" id="textfield10" pattern="[6-9][0-9]{9}" value="{{data['d_phone_no']}}" class="form-control" required /></td>
+    </tr>
+
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;" >Photo</strong></div></td>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control"  /></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong style="position: relative;top: 10px;right: 12px" >Schedule Time</strong></div></td>
+      <td><label for="textfield11"></label>
+      <input type="text" name="textfield11" id="textfield11" value="{{data['d_schedule_time']}}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Update" class="btn btn-primary mt-3" style="
+        position: relative;left: 50px;" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
+
